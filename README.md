@@ -17,5 +17,5 @@ $ npm install
 
 Clone the repo, then from the root folder:
 
-1. `npm start`
+1. `gulp`
 1. Open [http://localhost:3000/](http://localhost:3001/) in your browser
