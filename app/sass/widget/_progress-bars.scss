@@ -1,0 +1,60 @@
+.progress-container{
+	width: auto;
+	height: auto;
+	margin: auto;
+	padding: 0;
+	background-color: $white;
+	box-shadow: 0px 1px 2px $shadow-color;
+	background-clip: padding-box;
+	@include border-radius($borderRadius);
+
+	.progress-bar {
+		margin:  $margin 50px;
+		padding: 0;
+		width: 600px;
+		height: 30px;
+		text-align: center;
+		position: relative;
+		background-color: $primary-color;
+		border: 1px solid $gray;
+		span {
+			color: $white;
+			margin: 0;
+			position: relative;
+			top: 7px;
+			z-index: 1;
+		}
+		.progress {
+			width: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 1px;
+			height: 28px;
+			background-color: $gray-light;
+		}
+		.progress.red {
+			background-color: $red;
+		}
+	}
+	@include breakpoint(medium) {
+		.progress-bar {
+			margin:  $margin auto;
+			width: 420px;
+		}
+	}
+	@include breakpoint(small) {
+		.progress-bar {
+			margin:  $margin auto;
+			width: 300px;
+		}
+	}
+	.control-container {
+		padding: $padding;
+		text-align: center;
+		justify-content: flex-end;
+		background-color: $gray;
+		flex: 1;
+		@include border-radius(0 0 $borderRadius $borderRadius);
+	}
+}

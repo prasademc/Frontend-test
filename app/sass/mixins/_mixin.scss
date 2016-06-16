@@ -1,0 +1,27 @@
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (max-width: 64.375em) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: 53.250em) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: 30.750em)  { @content; }
+  }
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}

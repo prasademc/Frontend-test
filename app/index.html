@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Progress Bars</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.min.js"></script>
+		<script type="text/javascript" src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+		<link rel="stylesheet" type="text/css" href="/css/default.css">
+	</head>
+	<body>		
+		<div id='container' class='container'></div>
+	</body>
+	<script id='template' type='text/ractive'>
+		<header class='header'>
+			<h1>{{title}}</h1>
+		</header>
+		<div class="wrapper">
+			<div class="progress-container">
+				{{#with progress}}
+					{{#bars: i}}					
+				        <div class="progress-bar">
+				        	{{#if bars[i] < 0}}
+								<span>percentage 0%</span>
+							{{elseif bars[i] > 100}}
+								<span>percentage {{bars[i] < limit ? bars[i] : limit}}%</span>
+								<div class="progress red" style="width: {{bars[i] < 100 ? bars[i] + '%' : 'calc(100% - 2px)'}}"></div>
+							{{else}}
+								<span>percentage {{bars[i]}}%</span>
+								<div class="progress" style="width: {{bars[i]}}%"></div>
+							{{/if}}
+						</div>
+				    {{/bars}}
+			    {{/with}}
+				<div class="control-container">
+					{{#with progress}}
+						<span class="select">
+							<select value='{{selectedBar}}'>
+								{{#bars: i}}
+									<option value='{{i}}'>progress bar {{i}}</option>
+								{{/bars}}
+							</select>
+						</span>
+						{{#each buttons: index}}
+							<button class='btn' disabled='{{selectedBar == null}}' on-click='countPrograss(this)'>{{this > 0 ? '+' : ''}}{{this}}</button>
+						{{/each}}
+					{{/with}}
+				</div>
+			</div>
+		</div>
+	</script>
+	<script type="text/javascript" src='/scripts/main.js'></script>
+</html>

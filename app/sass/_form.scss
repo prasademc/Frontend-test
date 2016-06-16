@@ -1,0 +1,59 @@
+.btn {
+  min-width: 45px;
+  margin: 0 5px;
+  background: $blue;
+  color: $white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border-width: 0px;
+  &:hover {
+    text-decoration: none;
+    background-color: $gray-light;
+  }
+  &:disabled {
+    background-color: $gray-light;
+  }
+}
+.select {
+  position: relative;
+  &:after {
+    content: '>';
+    font-size: 18px;
+    font-weight: bold;
+    color: $blue;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right: 8px;
+    top: 0;
+    padding: 0;
+    position: absolute;
+    pointer-events:none;
+  }
+  &:before {
+    content: '';
+    right: 6px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    pointer-events: none;
+    display: block;
+  }
+  select {
+    color: $white;
+    margin: 0;
+    border: 2px solid $blue;
+    width: 150px;
+    padding: 5px 30px 5px 5px;
+    font-size: 16px;
+    height: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: $gray-light;
+  } 
+}
