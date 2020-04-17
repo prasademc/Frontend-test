@@ -4,7 +4,7 @@
 		<title>Progress Bars</title>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.min.js"></script>
-		<script type="text/javascript" src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+		<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/ractive'></script>
 		<link rel="stylesheet" type="text/css" href="/css/default.css">
 	</head>
 	<body>		
@@ -41,7 +41,8 @@
 							</select>
 						</span>
 						{{#each buttons: index}}
-							<button class='btn' disabled='{{selectedBar == null}}' on-click='countPrograss(this)'>{{this > 0 ? '+' : ''}}{{this}}</button>
+							{{ counter }}
+							<button class='btn' disabled='{{selectedBar == null}}' on-click='add('counter', 1)'>{{this > 0 ? '+' : ''}}{{this}}</button>
 						{{/each}}
 					{{/with}}
 				</div>

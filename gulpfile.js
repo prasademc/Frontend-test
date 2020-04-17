@@ -82,4 +82,4 @@ gulp.task('watch', function() {
 /*
 // Default Task
 */
-gulp.task('default', ['vendor', 'appjs', 'sass', 'images', 'html', 'browser-sync', 'watch']);
+gulp.task('default', gulp.series(['vendor', 'appjs', 'sass', 'images', 'html', 'browser-sync', 'watch']));
